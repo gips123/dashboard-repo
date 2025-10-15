@@ -23,7 +23,7 @@ export default function FolderPage({ params }: FolderPageProps) {
 
   useEffect(() => {
     if (!isLoading && !user) {
-      router.push('/login');
+      router.push('/');
     } else if (user && user.role !== resolvedParams.role) {
       router.push(`/${user.role}`);
     }
@@ -88,7 +88,7 @@ export default function FolderPage({ params }: FolderPageProps) {
 
   const handleLogout = () => {
     logout();
-    router.push('/login');
+    router.push('/');
   };
 
   const handleFileUpload = (newFile: File) => {

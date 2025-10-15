@@ -30,7 +30,7 @@ export default function DokumenPage({ params }: DokumenPageProps) {
 
   useEffect(() => {
     if (!isLoading && !user) {
-      router.push('/login');
+      router.push('/');
     } else if (user && user.role !== resolvedParams.role) {
       router.push(`/${user.role}`);
     }
@@ -52,7 +52,7 @@ export default function DokumenPage({ params }: DokumenPageProps) {
 
   const handleLogout = () => {
     logout();
-    router.push('/login');
+    router.push('/');
   };
 
   const handleFileUpload = (newFile: FileType) => {
