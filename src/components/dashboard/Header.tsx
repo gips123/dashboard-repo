@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
 import { 
   LogOut, 
@@ -20,6 +21,7 @@ interface HeaderProps {
 export function Header({ user, onLogout }: HeaderProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -115,7 +117,13 @@ export function Header({ user, onLogout }: HeaderProps) {
                 {/* Logout */}
                 <div className="border-t border-gray-100 pt-2">
                   <button
-                    onClick={onLogout}
+                    onClick={() => {
+                      console.log('Logout button clicked');
+                      onLogout();
+                      console.log('Redirecting to / with window.location.href');
+                      // Use window.location.href to ensure complete page refresh
+                      window.location.href = '/';
+                    }}
                     className="w-full flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors duration-200"
                   >
                     <LogOut className="mr-3 h-4 w-4" />

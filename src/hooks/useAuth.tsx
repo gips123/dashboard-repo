@@ -40,11 +40,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const logout = () => {
+    console.log('Logout called, setting user to null');
     setUser(null);
     if (typeof window !== 'undefined') {
       localStorage.removeItem('dashboard-user');
-      // Redirect to login page after logout
-      window.location.href = '/';
+      console.log('Removed user from localStorage');
     }
   };
 
