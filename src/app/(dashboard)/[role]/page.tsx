@@ -9,15 +9,10 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { 
   FolderOpen, 
-  Upload, 
-  FileText, 
-  TrendingUp,
-  Calendar,
-  Users
+  FileText
 } from 'lucide-react';
 import { getRoleConfig, getStatsByRole, getFilesByRole } from '@/lib/mock-data';
-import { UserRole } from '@/types';
-import { getRoleDisplayName } from '@/lib/utils';
+import { UserRole, File as FileType } from '@/types';
 
 interface DashboardPageProps {
   params: Promise<{
@@ -29,7 +24,7 @@ export default function DashboardPage({ params }: DashboardPageProps) {
   const { user, logout, isLoading } = useAuth();
   const router = useRouter();
   const resolvedParams = use(params);
-  const [files, setFiles] = useState(getFilesByRole(resolvedParams.role));
+  const [files, setFiles] = useState<FileType[]>(getFilesByRole(resolvedParams.role));
 
   useEffect(() => {
     if (!isLoading && !user) {
@@ -59,7 +54,7 @@ export default function DashboardPage({ params }: DashboardPageProps) {
     router.push('/login');
   };
 
-  const handleFileUpload = (newFile: any) => {
+  const handleFileUpload = (newFile: FileType) => {
     setFiles(prev => [...prev, newFile]);
   };
 

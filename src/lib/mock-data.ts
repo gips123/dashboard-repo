@@ -1,4 +1,4 @@
-import { User, File, Folder, RoleConfig, DashboardStats } from '@/types';
+import { User, File, RoleConfig, DashboardStats } from '@/types';
 
 export const ROLE_CONFIG: Record<string, RoleConfig> = {
   dosen: {

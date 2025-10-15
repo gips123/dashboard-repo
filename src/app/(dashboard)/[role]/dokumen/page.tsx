@@ -9,12 +9,11 @@ import { Button } from '@/components/ui/Button';
 import { 
   FolderOpen, 
   FileText,
-  Upload,
   Calendar,
   User
 } from 'lucide-react';
 import { getRoleConfig, getFilesByRole } from '@/lib/mock-data';
-import { UserRole, File } from '@/types';
+import { UserRole, File as FileType } from '@/types';
 import { formatFileSize, formatDate } from '@/lib/utils';
 
 interface DokumenPageProps {
@@ -27,7 +26,7 @@ export default function DokumenPage({ params }: DokumenPageProps) {
   const { user, logout, isLoading } = useAuth();
   const router = useRouter();
   const resolvedParams = use(params);
-  const [files, setFiles] = useState<File[]>(getFilesByRole(resolvedParams.role));
+  const [files, setFiles] = useState<FileType[]>(getFilesByRole(resolvedParams.role));
 
   useEffect(() => {
     if (!isLoading && !user) {
@@ -56,7 +55,7 @@ export default function DokumenPage({ params }: DokumenPageProps) {
     router.push('/login');
   };
 
-  const handleFileUpload = (newFile: File) => {
+  const handleFileUpload = (newFile: FileType) => {
     setFiles(prev => [...prev, newFile]);
   };
 

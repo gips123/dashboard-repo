@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
+import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { FileIcon } from '@/components/ui/FileIcon';
 import { FileUpload } from './FileUpload';
@@ -10,11 +10,9 @@ import {
   Download, 
   Eye, 
   Trash2, 
-  MoreVertical,
   Grid3X3,
   List,
-  Search,
-  Filter
+  Search
 } from 'lucide-react';
 import { File, Folder } from '@/types';
 import { formatFileSize, formatDate } from '@/lib/utils';

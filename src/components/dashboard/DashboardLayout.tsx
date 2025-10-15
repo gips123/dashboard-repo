@@ -14,7 +14,7 @@ interface DashboardLayoutProps {
 export function DashboardLayout({ children, user, onLogout }: DashboardLayoutProps) {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Sidebar user={user} onLogout={onLogout} />
+      <Sidebar user={user} />
       
       {/* Main content */}
       <div className="lg:ml-64">

@@ -3,10 +3,10 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
+import { Card } from '@/components/ui/Card';
 import { MOCK_USERS } from '@/lib/mock-data';
 import { User } from '@/types';
-import { FileText, Mail, Lock, Eye, EyeOff } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 
 interface LoginFormProps {
   onLogin: (user: User) => void;

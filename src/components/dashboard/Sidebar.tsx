@@ -34,7 +34,6 @@ import { Button } from '@/components/ui/Button';
 
 interface SidebarProps {
   user: User;
-  onLogout: () => void;
 }
 
 const iconMap = {
@@ -58,7 +57,7 @@ const iconMap = {
   Shield
 };
 
-export function Sidebar({ user, onLogout }: SidebarProps) {
+export function Sidebar({ user }: SidebarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const roleConfig = getRoleConfig(user.role);

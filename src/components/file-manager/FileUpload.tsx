@@ -9,9 +9,7 @@ import {
   Upload, 
   X, 
   File, 
-  AlertCircle,
-  CheckCircle,
-  Loader2
+  AlertCircle
 } from 'lucide-react';
 import { File as FileType, Folder } from '@/types';
 import { formatFileSize } from '@/lib/utils';
@@ -94,7 +92,7 @@ export function FileUpload({ folder, onUpload, onCancel }: FileUploadProps) {
       };
 
       onUpload(newFile);
-    } catch (error) {
+    } catch {
       setUploadError('Gagal mengupload file. Silakan coba lagi.');
     } finally {
       setIsUploading(false);

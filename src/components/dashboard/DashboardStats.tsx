@@ -12,7 +12,7 @@ import {
   Download,
   Eye
 } from 'lucide-react';
-import { DashboardStats as Stats, File } from '@/types';
+import { DashboardStats as Stats } from '@/types';
 import { formatFileSize, formatDate } from '@/lib/utils';
 
 interface DashboardStatsProps {
