@@ -134,7 +134,7 @@ export function LoginForm({ onLogin }: LoginFormProps) {
 
                 <div className="mt-8 p-4 bg-gray-200 rounded-lg">
                   <h4 className="text-sm font-medium text-black mb-2">Demo Accounts:</h4>
-                  <div className="space-y-1 text-xs">
+                  <div className="space-y-1 text-xs text-black">
                     <div>• ahmad.wijaya@university.ac.id (Dosen)</div>
                     <div>• siti.nurhaliza@university.ac.id (Tendik)</div>
                     <div>• bambang.sutrisno@university.ac.id (Wakil Dekan 1)</div>
